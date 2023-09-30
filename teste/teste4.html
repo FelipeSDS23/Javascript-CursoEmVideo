@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+    <style>
+        
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Título</h1>
+    </header>
+    <section>
+        <div id="txt">
+            Testando
+        </div>
+        <div>
+            <img src="" alt="" id="img">
+        </div>
+    </section>
+    <footer>
+        <p>&copy;CursoemVideo</p>
+    </footer>
+    <script>
+        function carregar(){
+            var agora = new Date()
+            var hora = agora.getHours()
+            var texto = window.document.getElementById('txt')
+            var imagem = window.document.getElementById('img')
+            
+            if (hora >= 0 && hora <= 11){
+                texto.innerHTML = `<p>Bom dia!</p> <p>Agora são ${hora} horas</p>`
+                imagem.src = 'imagens/fotomanha.jpg'
+            }
+            else if (hora < 18){
+                texto.innerHTML = `<p>Bom tarde!</p> <p>Agora são ${hora} horas</p>`
+                imagem.src = 'imagens/fototarde.jpg'
+            }    
+            else{
+                texto.innerHTML = `<p>Bom noite!</p> <p>Agora são ${hora} horas</p>`
+                imagem.src = 'imagens/fotonoite.jpg'
+            }
+        }
+    </script>
+</body>
+</html>

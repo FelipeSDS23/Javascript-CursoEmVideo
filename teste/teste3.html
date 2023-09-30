@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    
+    <label for="inac">Seu país: </label>
+    <select name="nac" id="inac">
+        <option value="Brasil">Brasil</option>
+        <option value="Estados Unidos">Estados Unidos</option>
+        <option value="Japão">Japão</option>
+    </select>
+
+    <input type="button" value="Verificar" onclick="verificar()">
+   
+    <p id="res"></p>
+        
+     <script>
+        function verificar(){
+            var pais = window.document.getElementById('inac').value
+            if(pais == 'Brasil'){
+                window.document.getElementById('res').innerText = 'Você é Brasileiro'
+            }
+            else if(pais == 'Estados Unidos'){
+                window.document.getElementById('res').innerText = 'Você é Americano'
+            }
+            else{
+                window.document.getElementById('res').innerText = 'Você é Japones'
+            }
+        }
+     </script>   
+
+
+</body>
+</html>

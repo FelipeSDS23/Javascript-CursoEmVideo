@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #68b6ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            margin: 20px 0px;
+            color: white;
+        }
+        div#form{
+            background-color: white;
+            width: 500px;
+            height: 140px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        p{
+            padding: 10px 0px;
+        }
+        div#picture{
+            background-color: white;
+            height: 250px;
+            border-radius: 0px 0px 10px 10px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        div#picture > img{
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+        footer{
+            text-align: center;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <h1>Verificador de Idade</h1>
+        <div id="form">
+            <p>
+                <label for="iano">Ano de Nascimento: </label>
+                <input type="number" name="ano" id="iano">
+            </p>
+            <p>
+                <span>Sexo:</span>
+                <input type="radio" name="sex" id="misex" value="M" checked>
+                <label for="misex">Masculino</label>
+                <input type="radio" name="sex" id="fisex" value="F">
+                <label for="fisex">Feminino</label>
+            </p>
+            <p>
+                <input type="submit" value="Verificar" onclick="verificar()">
+            </p>
+            <p id="text">
+                Preencha os dados acima para ver o resultado!
+            </p>
+        </div>
+        <div id="picture">
+            <img src="" alt="sexo" id="foto">
+        </div>
+        <footer>
+            <p>&copy; CursoemVideo</p>
+        </footer>
+    </div>
+
+    <script>
+        function verificar(){
+            var form = window.document.getElementById('form')
+            var picture = window.document.getElementById('picture')
+            form.style.borderRadius = '10px 10px 0px 0px'
+            picture.style.display = 'flex'
+
+            var idade = window.document.getElementById('iano').value
+            var sexo = window.document.getElementsByName('sex').value
+            var img = window.document.getElementById('foto')
+
+            if (idade >= 2013){
+                img.src = 'imagens/kid.jpg'
+            }
+            else if (idade >= 2000){
+                img.src = 'imagens/young.jpg'
+            }
+            else if (idade >= 1980){
+                img.src = 'imagens/men.jpg'
+            }
+            else if (idade >= 1903){
+                img.src = 'imagens/old.jpg'
+            }
+        }
+    </script>
+</body>
+</html>
